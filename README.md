@@ -33,7 +33,7 @@
   * implement a Queue constructor
     * implement `enqueue(value)`, `dequeue()`, and `peek()` methods on the Queue class by utilizing methods from the Linked List class you already defined in Lab 5, or in your `data-structures-and-algorithms` repo. 
   * **If you do not have a completed Linked List class to utilize, you may use Javascript arrays like the lecture code, *but you will only receive a maximum of 8 points.***  
-  * **If you do not have a completed Linked List class to utilize, you may utilize an NPM package that gives you a Linked List, *but you will only receive a maximum of 7 points.*** 
+  * **If you do not have a completed Linked List class to utilize, you may utilize an NPM package that gives you a Linked List, *but you will only receive a maximum of 8 points.*** 
   * If you go the NPM package route, the instructional team will **NOT** assist you in figuring out how to use the NPM package. You should figure that out yourself. The instructional team **WILL** assist if you use the above two methods to implement your Stack and Queue.
  
   
