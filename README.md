@@ -1,12 +1,10 @@
-![cf](http://i.imgur.com/7v5ASc8.png) Stacks and Queues Data Structures
+![cf](http://i.imgur.com/7v5ASc8.png) Lab 10 - Stacks and Queues Data Structures
 ====
 
 ## To Submit this Assignment
-  * Do all your work in a public repository called `data-structures-and-algorithms`
-  * fork this repository
-  * write all of your code in a directory named `stacks-and-queues`
-  * push to your repository
-  * submit a pull request to this repository
+  * fork this repository and work in a branch called `lab-10`
+  * Set up Travis CI on your forked repo
+  * submit a pull request to your forked repository
   * submit a link to your PR in canvas
   * write a question and observation on canvas
 
@@ -14,17 +12,18 @@
 #### Configuration  
   <!-- list of files, configurations, tools, etc that are required -->
   Your lab directory must include  
+  * **src/ directory** *
+     * **lib/** -- directory for holding your programs helper modules
+     * **__test/__** -- directory for holding your programs unit and integration tests
   * **index.js** -- The entry point to your module
   * **README.md** -- with a documentation about your lab
   * **.gitignore** -- with a robust .gitignore
-  * **.eslintrc** -- with the class .eslintrc file
+  * **.eslintrc.json** -- with the class .eslintrc file
   * **.eslintignore** -- with the class .eslintignore
   * **.package.json** -- with all dependencies and dev-dependencies
-  * **lib/** -- directory for holding your programs helper modules
-  * **test/** -- directory for holding your programs unit and integration tests
 
 #### Testing  
-  * write at least three test assertions for each method of the Stack and Queue List Data Structures
+  * write at least three two assertions for each method of the Stack and Queue List Data Structures
   * organize your tests into appropriate describe/it blocks for test output readability
 
 ####  Documentation  
@@ -37,13 +36,10 @@
 
 #### Feature Tasks  
   * implement a Stack constructor
-  * implement `push(value)` and `pop()` methods on the Stack class
+    * implement `push(value)`, `pop()`, and `peek()` methods on the Stack class by utilizing methods from the Linked List class you already defined in Lab 10 or in your `data-structures-and-algorithms` repo. 
   * implement a Queue constructor
-  * implement `enqueue(value)` and `dequeue()` methods on the Queue class
-  * implement `serialize()` and `deserialize()` methods on both classes
+    * implement `enqueue(value)` and `dequeue()` methods on the Queue class by utilizing methods from the Linked List class you already defined in Lab 10 or in your `data-structures-and-algorithms` repo. 
+  * Label the Big Oh time and space complexity of your methods in comments
+  * ** If you do not have a completed Linked List class to utilize, you may use the Javascript arrays, *but you can only receive a maximum of 8 points* **
 
-#### Rubric:
-  * Tests: 2pts
-  * Passes linter: 1pts
-  * Completed Data Structure: 5pts
-  * Big-O notation: 2pt
+
