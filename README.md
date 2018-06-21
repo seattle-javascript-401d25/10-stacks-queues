@@ -23,23 +23,19 @@
   * **.package.json** -- with all dependencies and dev-dependencies
 
 #### Testing  
-  * write at least three two assertions for each method of the Stack and Queue List Data Structures
-  * organize your tests into appropriate describe/it blocks for test output readability
+  * write at least two assertions for each method of the Stack and Queue List Data Structures
+  * organize your tests into appropriate describe/test blocks for test output readability
 
-####  Documentation  
-  * in your README, write documentation for you data structures
-  * your documentation should includes code block useage examples
-  * provide instructions for:
-    * installing and using your data structure
-    * accessing each method
-    * running your tests
 
 #### Feature Tasks  
   * implement a Stack constructor
     * implement `push(value)`, `pop()`, and `peek()` methods on the Stack class by utilizing methods from the Linked List class you already defined in Lab 10, or in your `data-structures-and-algorithms` repo. 
   * implement a Queue constructor
     * implement `enqueue(value)`, `dequeue()`, and `peek()` methods on the Queue class by utilizing methods from the Linked List class you already defined in Lab 10, or in your `data-structures-and-algorithms` repo. 
-  * Label the Big Oh time and space complexity of your methods in comments
   * **If you do not have a completed Linked List class to utilize, you may use Javascript arrays like the lecture code, *but you will only receive a maximum of 8 points.***
+  
+  
+####  Documentation  
+List out the methods for your Queue and Stack class and explain what they do by using your favorite analogy for each. List the Big Oh time and space complexity for each method, making considerations for the actual Big Oh complexity your Linked List implementation might have under the hood. 
 
 
