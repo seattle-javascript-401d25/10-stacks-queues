@@ -40,6 +40,6 @@
   * implement a Queue constructor
     * implement `enqueue(value)` and `dequeue()` methods on the Queue class by utilizing methods from the Linked List class you already defined in Lab 10 or in your `data-structures-and-algorithms` repo. 
   * Label the Big Oh time and space complexity of your methods in comments
-  * ** If you do not have a completed Linked List class to utilize, you may use the Javascript arrays, *but you can only receive a maximum of 8 points* **
+  * **If you do not have a completed Linked List class to utilize, you may use Javascript arrays like the lecture code, *but you will only receive a maximum of 8 points.***
 
 
