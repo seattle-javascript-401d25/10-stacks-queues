@@ -1,5 +1,4 @@
-![cf](http://i.imgur.com/7v5ASc8.png) Lab 10 - Stacks and Queues Data Structures
-====
+https://travis-ci.org/noahmvf/10-stacks-queues
 
 ## To Submit this Assignment
   * fork this repository and work in a branch called `lab-10`
