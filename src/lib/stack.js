@@ -1,9 +1,11 @@
 'use strict';
 
-module.exports = class Queue {
-  constructor(value) {
-    this.value = value;
-    this.head = null;
+module.exports = class Stack {
+  class Node {
+    constructor(value) {
+      this.value = value;
+      this.head = null;
+    }
   }
 
   enqueue() {
