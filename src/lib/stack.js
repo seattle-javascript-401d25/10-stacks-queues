@@ -8,7 +8,7 @@ module.exports = class Stack {
     }
   }
 
-  enqueue() {
+  push() {
     this.value = this.head.value;
     this.head = this.head.next;
     if (this.head === null) {
@@ -18,7 +18,7 @@ module.exports = class Stack {
     return this.value;
   }
   
-  dequeue() {
+  pop() {
     this.value = this.tail.value;
     this.head = this.tail.next;
     if (this.tail === null) {
