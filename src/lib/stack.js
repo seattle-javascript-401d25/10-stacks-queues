@@ -1,32 +1,30 @@
 'use strict';
 
+const LinkedList = require('./linked-list/list');
+
+// LIFO - last in first out
 module.exports = class Stack {
-  class Node {
-    constructor(value) {
-      this.value = value;
-      this.head = null;
-    }
+  constructor() {
+    this.stack = new LinkedList();
+    this.top = null;
+    this.length = 0;
   }
 
-  push() {
-    this.value = this.head.value;
-    this.head = this.head.next;
-    if (this.head === null) {
-      this.tail = null;
-    }
-
-    return this.value;
-  }
+  push(value) {
+    this.stack.insertAtHead(value);
+    this.length += 1;
+    this.top = this.stack.head;
   
-  pop() {
-    this.value = this.tail.value;
-    this.head = this.tail.next;
-    if (this.tail === null) {
-      this.head = null;
-    }
-
-    return this.value;
+    return this.length;
   }
+
+  pop() {
+    if (!this.stack.head) return null;
+    const poppedNode = this.stack.remove(this.stack.head);
+    this.top = this.stack.head.value;
+    return poppedNode;
+  }
+
 
   peek() {
     return this.head.value;
