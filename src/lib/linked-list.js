@@ -7,111 +7,98 @@ class Node { //eslint-disable-line
   }
 }
 
-module.exports = class LinkedList { //eslint-disable-line
+module.exports = class LinkedList {
   constructor() {
     this.head = null;
+    this.tail = null;
   }
 
-  append(v) {
-    const node = new Node(v);
-
+  addLast(value) {
+    const newNode = new Node(value);
     if (!this.head) {
-      this.head = node;
+      this.head = newNode;
+      this.tail = newNode;
       return this;
     }
 
-    let curr = this.head;
-    while (curr.next) {
-      curr = curr.next;
+    let currentNode = this.head;
+    while (currentNode.next) {
+      currentNode = currentNode.next;
     }
 
-    curr.next = node;
+    currentNode.next = newNode;
+    this.tail = newNode;
     return this;
   }
 
-  insertBefore(v, nv) {
-    const node = new Node(nv);
-
-    if (this.head.value === v) {
-      node.next = this.head;
-      this.head = node;
-      return this;
-    }
-
-    let curr = this.head;
-    while (curr.next) {
-      if (curr.next.value === v) {
-        node.next = curr.next;
-        curr.next = node;
-        return this;
-      }
-      curr = curr.next;
-    }
-    return 'unexpected';
-  }
-
-  insertAfter(v, nv) {
-    const node = new Node(nv);
-
-    let curr = this.head;
-    while (curr.next) {
-      if (curr.value === v) {
-        node.next = curr.next;
-        curr.next = node;
-        return this;
-      }
-      curr = curr.next;
-    }
-
-    if (curr.value === v) {
-      curr.next = node;
-      return this;
-    }
-
-    return 'unexpected';
-  }
-
-  nthFromEnd(n) {
-    if (this.head === null) {
-      return 'empty';
-    }
-
-    let n1 = this.head;
-    let n2 = this.head;
-
-    for (let i = 0; i < n; i++) {
-      if (!n2.next) return 'unexpected';
-      n2 = n2.next;
-    }
-
-    while (n2.next) {
-      n1 = n1.next;
-      n2 = n2.next;
-    }
-    return n1.value;
-  }
-
-  removeFirst() {
+  addFirst(value) {
+    const newNode = new Node(value);
+    
     if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
       return this;
     }
     
-    let n1 = this.head;
-    this.head = n1.next;
-    n1 = null;
+    newNode.next = this.head;
+    this.head = newNode;
     return this;
   }
 
-  removeLast() {
-    if (!this.head) {
+  removeFirst() {
+    if (!this.head) return null;
+    
+    const firstNode = this.head;
+    this.head = firstNode.next;
+    if (!this.head) this.tail = null;
+    return firstNode;
+  }
+
+  insertBefore(value, newValue) {
+    const newNode = new Node(newValue);
+
+    if (!this.head) return null;
+
+    if (this.head.value === value) {
+      newNode.next = this.head;
+      this.head = newNode;
       return this;
     }
 
-    let n1 = this.head;
-    while (n1.next.next) {
-      n1 = n1.next;
+    let currentNode = this.head;
+    while (currentNode.next) {
+      if (currentNode.next.value === value) {
+        newNode.next = currentNode.next;
+        currentNode.next = newNode;
+        return this;
+      }
+      currentNode = currentNode.next;
     }
-    n1.next = null;
-    return this;
+
+    return null;
+  }
+
+  insertAfter(value, newValue) {
+    if (!this.head) return null;
+
+    const newNode = new Node(newValue);
+
+    let currentNode = this.head;
+    while (currentNode.next) {
+      if (currentNode.value === value) {
+        newNode.next = currentNode.next;
+        currentNode.next = newNode;
+        return this;
+      }
+      currentNode = currentNode.next;
+    }
+
+    if (currentNode.value === value) {
+      newNode.next = currentNode.next;
+      currentNode.next = newNode;
+      return this;
+    }
+
+    return null;
   }
 };

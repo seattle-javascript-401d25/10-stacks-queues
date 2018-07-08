@@ -1,21 +1,33 @@
 'use strict';
 
-const LinkedList = require('./linked-list.js');
+const LinkedList = require('./linked-list');
 
-module.exports = class Stack { //eslint-disable-line
+module.exports = class Stack {
   constructor() {
-    this.storage = new LinkedList();
+    this.stack = new LinkedList();
+    this.top = null;
+    this.length = 0;
   }
 
-  push(v) {
-    return this.storage.append(v);
+  push(value) {
+    this.length += 1;
+    this.stack.addFirst(value);
+    this.top = this.stack.head.value;
+    
+    return this.length;
   }
 
   pop() {
-    return this.storage.removeLast();
+    if (!this.stack.head) return null;
+    this.length -= 1;
+
+    const poppedValue = this.stack.removeFirst().value;
+    this.top = this.stack.head.value;
+
+    return poppedValue;
   }
 
   peek() {
-    return this.storage.nthFromEnd(0);
+    return this.top;
   }
 };
