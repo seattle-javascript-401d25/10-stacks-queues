@@ -1,36 +1,21 @@
 'use strict';
 
-const LinkedList = require('./linked-list/list');
+const LinkedList = require('./linkedlist.js');
 
-// LIFO - last in first out
-module.exports = class Stack {
+module.exports = class Stack { //eslint-disable-line
   constructor() {
-    this.stack = new LinkedList();
-    this.top = null;
-    this.length = 0;
+    this.storage = new LinkedList();
   }
 
-  push(value) {
-    this.stack.insertAtHead(value);
-    this.length += 1;
-    this.top = this.stack.head;
-  
-    return this.length;
+  push(v) {
+    return this.storage.append(v);
   }
 
   pop() {
-    if (!this.stack.head) return null;
-    const poppedNode = this.stack.remove(this.stack.head);
-    this.top = this.stack.head.value;
-    return poppedNode;
+    return this.storage.removeLast();
   }
-
 
   peek() {
-    return this.head.value;
-  }
-
-  isEmpty() {
-    return this.head === null;
+    return this.storage.nthFromEnd(0);
   }
 };
