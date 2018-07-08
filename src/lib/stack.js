@@ -1,6 +1,6 @@
 'use strict';
 
-const LinkedList = require('./linkedlist.js');
+const LinkedList = require('./linked-list.js');
 
 module.exports = class Stack { //eslint-disable-line
   constructor() {

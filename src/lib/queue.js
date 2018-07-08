@@ -1,36 +1,25 @@
 'use strict';
 
-module.exports = class Queue {
-  constructor(value) {
-    this.value = value;
-    this.head = null;
+const LinkedList = require('./linked-list.js');
+
+module.exports = class Queue { //eslint-disable-line
+  constructor() {
+    this.storage = new LinkedList();
   }
 
-  enqueue() {
-    this.value = this.head.value;
-    this.head = this.head.next;
-    if (this.head === null) {
-      this.tail = null;
-    }
-
-    return this.value;
+  enqueue(v) {
+    return this.storage.append(v);
   }
-  
+
   dequeue() {
-    this.value = this.tail.value;
-    this.head = this.tail.next;
-    if (this.tail === null) {
-      this.head = null;
-    }
-
-    return this.value;
+    return this.storage.removeFirst();
   }
 
   peek() {
-    return this.head.value;
+    return this.storage.nthFromEnd(0);
   }
 
   isEmpty() {
-    return this.head === null;
+    return !this.storage.head;
   }
 };
