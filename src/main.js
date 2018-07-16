@@ -1,6 +1,6 @@
 'use strict';
 
-require('./lib/recursion');
+require('./lib/stack');
 const Queue = require('./lib/queue');
 
 const q = new Queue();
